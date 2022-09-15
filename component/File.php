@@ -55,7 +55,7 @@ class File
 		return $fileName . '.' . $extension;
 	}
 	
-	public static function download(string $distantPath, ?string $localPath = null): self
+	public static function download(string $distantPath, ?string $localPath = null): string
 	{
 		if (!$localPath) {
 			$localPath = self::getTemoraryDirectory() . date('Y-m-d_H-i-s') . '-' . self::cleanFilename($distantPath);
