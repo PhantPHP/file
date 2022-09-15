@@ -63,6 +63,6 @@ class File
 		
 		file_put_contents($localPath, fopen($distantPath, 'r'));
 		
-		return new self($localPath);
+		return $localPath;
 	}
 }
