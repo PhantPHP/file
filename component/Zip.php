@@ -9,7 +9,7 @@ class Zip extends File
 {
 	public function unarchive(?string $unarchiveDirectory = null): array
 	{
-		if ($unarchiveDirectory) {
+		if (is_null($unarchiveDirectory)) {
 			$unarchiveDirectory = self::getTemoraryDirectory() . pathinfo($this->path, PATHINFO_FILENAME) . '/';
 		}
 		
