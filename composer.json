@@ -10,13 +10,18 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": ">=8.1"
     },
     "require-dev": {
-        "phpstan/phpstan": "^1.4"
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.4",
+        "phpunit/phpunit": "^9.5"
     },
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse component --memory-limit=4G"
+        "lint": "vendor/bin/php-cs-fixer fix ./ --rules=@PSR12",
+        "analyse": "vendor/bin/phpstan analyse component --memory-limit=4G",
+        "test": "vendor/bin/phpunit test --testdox",
+        "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html .public/code-coverage"
     },
     "autoload": {
         "psr-4": {

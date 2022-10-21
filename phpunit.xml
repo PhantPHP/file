@@ -1,0 +1,12 @@
+<phpunit bootstrap="vendor/autoload.php">
+	<testsuites>
+		<testsuite name="component">
+			<directory>test</directory>
+		</testsuite>
+	</testsuites>
+	<coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">component</directory>
+		</include>
+	</coverage>
+</phpunit>
