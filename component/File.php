@@ -44,6 +44,9 @@ class File
             ['Þ' => 'TH', 'þ' => 'th', 'Ð' => 'DH', 'ð' => 'dh', 'ß' => 'ss', 'Œ' => 'OE', 'œ' => 'oe', 'Æ' => 'AE', 'æ' => 'ae', 'µ' => 'u']
         );
 
+        $fileName = str_replace('\'', ' ', $fileName);
+        $fileName = preg_replace('/\s+/', ' ', $fileName);
+        $fileName = trim($fileName);
         $fileName = preg_replace(['/\s/', '/\.[\.]+/', '/[^\w_\.\-]/'], ['_', '.', ''], $fileName);
 
         $extension = strtolower($extension);

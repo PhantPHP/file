@@ -11,7 +11,7 @@ class Zip extends File
 {
     public function unarchive(?string $unarchiveDirectory = null): ?array
     {
-        if (! $this->exist()) {
+        if (!$this->exist()) {
             return null;
         }
 

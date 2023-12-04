@@ -26,7 +26,7 @@ final class FileTest extends TestCase
 
     public function tearDown(): void
     {
-        if (! file_exists($this->filePath)) {
+        if (!file_exists($this->filePath)) {
             return;
         }
 
@@ -58,15 +58,15 @@ final class FileTest extends TestCase
 
     public function testCleanFilename(): void
     {
-        $result = File::cleanFilename(' µ û ');
+        $result = File::cleanFilename(' µ \' û ');
 
         $this->assertIsString($result);
-        $this->assertEquals('_u_u_', $result);
+        $this->assertEquals('u_u', $result);
 
         $result = File::cleanFilename(' µ û . Jpg');
 
         $this->assertIsString($result);
-        $this->assertEquals('_u_u_.jpg', $result);
+        $this->assertEquals('u_u.jpg', $result);
     }
 
     public function testDownload(): void
