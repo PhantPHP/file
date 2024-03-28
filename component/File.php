@@ -11,6 +11,11 @@ class File
     ) {
     }
 
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
     public function exist(): bool
     {
         return file_exists($this->path);
