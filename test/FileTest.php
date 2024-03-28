@@ -33,6 +33,13 @@ final class FileTest extends TestCase
         unlink($this->filePath);
     }
 
+    public function testGetPath(): void
+    {
+        $result = $this->fixture->getPath();
+
+        $this->assertIsString($result);
+    }
+
     public function testGet(): void
     {
         $result = $this->fixture->exist();
