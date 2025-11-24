@@ -52,7 +52,8 @@ class File
         $fileName = str_replace('\'', ' ', $fileName);
         $fileName = preg_replace('/\s+/', ' ', $fileName);
         $fileName = trim($fileName);
-        $fileName = preg_replace(['/\s/', '/\.[\.]+/', '/[^\w_\.\-]/'], ['_', '.', ''], $fileName);
+        $fileName = preg_replace('/\.+/', '.', $fileName);
+        $fileName = preg_replace('/[^\w\s_\.\-]/', '', $fileName);
 
         $extension = strtolower($extension);
         $extension = trim($extension);
