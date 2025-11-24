@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Test\Service;
 
 use PHPUnit\Framework\TestCase;
-
 use Phant\File\File;
 
 final class FileTest extends TestCase
