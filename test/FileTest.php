@@ -67,12 +67,12 @@ final class FileTest extends TestCase
         $result = File::cleanFilename(' µ \' û ');
 
         $this->assertIsString($result);
-        $this->assertEquals('u_u', $result);
+        $this->assertEquals('u u', $result);
 
-        $result = File::cleanFilename(' µ û . Jpg');
+        $result = File::cleanFilename(' µ û .. Jpg');
 
         $this->assertIsString($result);
-        $this->assertEquals('u_u.jpg', $result);
+        $this->assertEquals('u u.jpg', $result);
     }
 
     public function testDownload(): void
